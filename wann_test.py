@@ -29,12 +29,8 @@ def main(argv):
   updateHyp(hyp,hyp_adjust)
   task = Task(games[hyp['task']], nReps=hyp['alg_nReps'])
 
-  # Bullet needs some extra help getting started
-  if hyp['task'].startswith("bullet"):
-    task.env.render("human")
-
   # Import individual for testing
-  wVec, aVec, wKey = importNet(infile)
+  wVec, aVec, _ = importNet(infile)
 
   # Show result
   fitness, wVals = task.getDistFitness(wVec, aVec, hyp,

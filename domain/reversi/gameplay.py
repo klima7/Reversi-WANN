@@ -1,10 +1,8 @@
 import time
 import signal
 from abc import ABC, abstractmethod
-from itertools import count
 
 import pygame
-from tqdm import tqdm
 
 from simulation import Simulation
 from environment import Environment
@@ -346,57 +344,3 @@ class GuiGameplay(Gameplay):
             return 'Human'
         else:
             return player.NAME.replace('_', ' ').upper()
-
-
-class Tournament:
-
-    def __init__(self, gameplay, number, player1, player2):
-        self.gameplay = gameplay
-        self.number = number
-
-        self.player1 = player1
-        self.player2 = player2
-
-        self.interrupted = False
-        self.results = None
-
-    def play(self):
-        self.__setup()
-        self.__interruptable_play_loop()
-        return self.results
-
-    def __setup(self):
-        self.gameplay.set_players(self.player1, self.player2)
-        self.results = [0, 0, 0]
-
-    def __interruptable_play_loop(self):
-        signal.signal(signal.SIGINT, self.__interrupt_handler)
-        self.__play_loop()
-        signal.signal(signal.SIGINT, signal.SIG_DFL)
-
-    def __interrupt_handler(self, _sigint, _frame):
-        self.interrupted = True
-
-    def __play_loop(self):
-        iterator = range(self.number) if self.number is not None else count()
-        tqdm_iterator = tqdm(iterator, total=self.number, desc='Playing', unit=' play')
-
-        for _ in tqdm_iterator:
-            self.__play_once()
-            tqdm_iterator.set_postfix_str(f'Wins: {self.results[0]}/{self.results[1]}/{self.results[2]}')
-
-            if self.interrupted:
-                break
-
-    def __play_once(self):
-        winner = self.gameplay.play()
-
-        if winner is self.player1:
-            self.results[0] += 1
-        elif winner is self.player2:
-            self.results[1] += 1
-        else:
-            self.results[2] += 1
-
-        self.gameplay.reset()
-        self.gameplay.swap_players()

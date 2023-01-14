@@ -57,7 +57,6 @@ class Task():
     if seed >= 0:
       random.seed(seed)
       np.random.seed(seed)
-      self.env.seed(seed)
 
     state = self.env.reset()
     self.env.t = 0
