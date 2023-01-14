@@ -50,7 +50,7 @@ def gatherData(data,wann,gen,hyp,savePop=False):
     data - (DataGatherer) - updated run data
   """
   data.gatherData(wann.pop, wann.species)
-  if (gen%hyp['save_mod']) is 0:
+  if (gen%hyp['save_mod']) == 0:
     #data = checkBest(data, bestReps=16)
     data = checkBest(data)
     data.save(gen)
@@ -264,7 +264,7 @@ if __name__ == "__main__":
    help='default hyperparameter file', default='p/default_wan.json')
 
   parser.add_argument('-p', '--hyperparam', type=str,\
-   help='hyperparameter file', default='p/reversi.json')
+   help='hyperparameter file', default='p/small_reversi.json')
 
   parser.add_argument('-o', '--outPrefix', type=str,\
    help='file name for result output', default='train')

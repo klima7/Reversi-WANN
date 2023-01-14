@@ -1,5 +1,5 @@
-from board import Board, Side
-from simulation import Simulation
+from .board import Board, Side
+from .simulation import Simulation
 
 
 class Environment:

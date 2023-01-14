@@ -64,7 +64,7 @@ if __name__ == "__main__":
    help='default hyperparameter file', default='p/default_wan.json')
 
   parser.add_argument('-p', '--hyperparam', type=str,\
-   help='hyperparameter file', default='p/reversi.json')
+   help='hyperparameter file', default=None)
 
   parser.add_argument('-n', '--nVals', type=int,\
    help='Number of weight values to test', default=6)

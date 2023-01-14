@@ -1,4 +1,4 @@
-from board import Board, Color
+from .board import Board, Color
 
 
 class Simulation:
@@ -34,7 +34,7 @@ class Simulation:
 
     @property
     def size(self):
-        return self.board.size
+        return self.board.__size
 
     @property
     def board_view(self):

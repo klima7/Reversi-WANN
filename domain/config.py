@@ -25,11 +25,11 @@ cartpole_swingup = Game(env_name='CartPoleSwingUp',
 games['swingup'] = cartpole_swingup
 
 
-cartpole_swingup = Game(env_name='reversi',
-  input_size=5,
-  output_size=1,
-  in_out_labels=['x','x_dot','cos(theta)','sin(theta)','theta_dot', 'force'],
-  actionSelect='all', # all, soft, hard
+small_reversi = Game(env_name='small_reversi',
+  input_size=36,
+  output_size=36,
+  in_out_labels=[f'{i}' for i in range(36)] * 2,
+  actionSelect='softmax',
   layers=[5, 5],  # anything
 
   i_act=np.full(5,1), # (input_size, 1)
@@ -43,4 +43,4 @@ cartpole_swingup = Game(env_name='reversi',
   output_noise=[False, False, False],
   max_episode_length = 1000,
 )
-games['reversi'] = cartpole_swingup
+games['small_reversi'] = small_reversi

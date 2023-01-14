@@ -110,6 +110,9 @@ class Board:
     def has_any_moves(self, color):
         return len(self.get_legal_moves(color)) > 0
 
+    def to_vector(self):
+        return self.__data.flatten()
+
     def __is_legal_move(self, position, color):
         return self.is_valid_position(position) and \
                self.__data[position[0], position[1]] == Side.ANY and \
