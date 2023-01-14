@@ -264,13 +264,13 @@ if __name__ == "__main__":
    help='default hyperparameter file', default='p/default_wan.json')
 
   parser.add_argument('-p', '--hyperparam', type=str,\
-   help='hyperparameter file', default='p/laptop_swing.json')
+   help='hyperparameter file', default='p/reversi.json')
 
   parser.add_argument('-o', '--outPrefix', type=str,\
-   help='file name for result output', default='test')
+   help='file name for result output', default='reversi')
   
   parser.add_argument('-n', '--num_worker', type=int,\
-   help='number of cores to use', default=8)
+   help='number of cores to use', default=24)
 
   args = parser.parse_args()
 

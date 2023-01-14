@@ -59,16 +59,16 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser(description=('Test ANNs on Task'))
     
   parser.add_argument('-i', '--infile', type=str,\
-   help='file name for genome input', default='log/test_best.out')
+   help='file name for genome input', default='log/reversi_best.out')
 
   parser.add_argument('-o', '--outPref', type=str,\
-   help='file name prefix for result input', default='log/result_')
+   help='file name prefix for result input', default='log/test_')
   
   parser.add_argument('-d', '--default', type=str,\
    help='default hyperparameter file', default='p/default_wan.json')
 
   parser.add_argument('-p', '--hyperparam', type=str,\
-   help='hyperparameter file', default=None)
+   help='hyperparameter file', default='p/reversi.json')
 
   parser.add_argument('-n', '--nVals', type=int,\
    help='Number of weight values to test', default=6)
