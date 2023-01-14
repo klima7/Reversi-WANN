@@ -267,7 +267,7 @@ if __name__ == "__main__":
    help='hyperparameter file', default='p/reversi.json')
 
   parser.add_argument('-o', '--outPrefix', type=str,\
-   help='file name for result output', default='reversi')
+   help='file name for result output', default='train')
   
   parser.add_argument('-n', '--num_worker', type=int,\
    help='number of cores to use', default=24)

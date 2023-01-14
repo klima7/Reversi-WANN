@@ -59,7 +59,7 @@ if __name__ == "__main__":
   parser = argparse.ArgumentParser(description=('Test ANNs on Task'))
     
   parser.add_argument('-i', '--infile', type=str,\
-   help='file name for genome input', default='log/reversi_best.out')
+   help='file name for genome input', default='log/train_best.out')
 
   parser.add_argument('-o', '--outPref', type=str,\
    help='file name prefix for result input', default='log/test_')

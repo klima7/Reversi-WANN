@@ -1,5 +1,5 @@
 {
-    "task":"reversi",
+    "task":"swingup",
     "maxGen": 1024,
     "alg_nReps": 3,
     "popSize": 192,
