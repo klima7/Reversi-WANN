@@ -93,7 +93,7 @@ class ReversiEnv:
         if not self.__simulation.is_finished():
             return 0
 
-        return 1 if self.__simulation.get_winner() == self.__color else 0
+        # return 1 if self.__simulation.get_winner() == self.__color else 0
 
         player_count = self.__simulation.board.get_discs_count(self.__color)
         opponent_count = self.__simulation.board.get_discs_count(-self.__color)
@@ -202,8 +202,3 @@ class ReversiEnv:
             return self.WHITE_COLOR
         else:
             return self.MIDDLE_COLOR
-
-
-class SmallReversiEnv(ReversiEnv):
-    def __init__(self):
-        super().__init__(size=(6, 6))

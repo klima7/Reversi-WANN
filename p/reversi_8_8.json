@@ -1,7 +1,7 @@
 {
-    "task":"small_reversi",
+    "task":"reversi_8_8",
     "maxGen": 1024,
-    "alg_nReps": 4,
+    "alg_nReps": 5,
     "bestReps": 200,
     "popSize": 192,
     "select_eliteRatio": 0.2,

@@ -49,6 +49,12 @@ def make_env(env_name, seed=-1, render_mode=False):
     from domain.cartpole_swingup import CartPoleSwingUpEnv
     env = CartPoleSwingUpEnv()
 
+  # -- Reversi ------------------------------------------------------- -- #
+  elif (env_name.startswith("reversi_")):
+    from domain.reversi import ReversiEnv
+    height, width = env_name[8:].split('_')
+    height, width = int(height), int(width)
+    env = ReversiEnv(size=(height, width))
 
   # -- Other  -------------------------------------------------------- -- #
   else:

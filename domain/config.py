@@ -9,25 +9,27 @@ games = {}
 
 
 # -- Reversi  ----------------------------------------------------------- #
-small_reversi = Game(env_name='small_reversi',
-  input_size=36,
-  output_size=36,
-  in_out_labels=[f'{i}' for i in range(36)] * 2,
-  actionSelect='softmax',
-  layers=[5, 5],  # anything
+for height in range(4, 9):
+  for width in range(4, 9):
+    reversi = Game(env_name=f'reversi_{height}_{width}',
+      input_size=height*width,
+      output_size=height*width,
+      in_out_labels=[f'{i}' for i in range(height*width)] * 2,
+      actionSelect='softmax',
+      layers=[5, 5],  # anything
 
-  i_act=np.full(5,1), # (input_size, 1)
-  o_act=np.full(1,5), # (output_size, 1)
-  h_act=[1,2,3,4,5,6,7,8,9,10], # (step functions)
+      i_act=np.full(height*width,1), # (input_size, 1)
+      o_act=np.full(height*width, 1), # (output_size, 1)
+      h_act=[1,2,3,4,5,6,7,8,9,10], # (step functions)
 
 
-  time_factor=0,
-  weightCap = 2.0,
-  noise_bias=0.0,
-  output_noise=[False, False, False],
-  max_episode_length = 1000,
-)
-games['small_reversi'] = small_reversi
+      time_factor=0,
+      weightCap = 2.0,
+      noise_bias=0.0,
+      output_noise=[False, False, False],
+      max_episode_length = 1000,
+    )
+    games[f'reversi_{height}_{width}'] = reversi
 
 
 

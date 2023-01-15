@@ -1,0 +1,9 @@
+{
+    "task":"reversi_4_4",
+    "maxGen": 1024,
+    "alg_nReps": 5,
+    "bestReps": 200,
+    "popSize": 192,
+    "select_eliteRatio": 0.2,
+    "select_tournSize": 8
+}
