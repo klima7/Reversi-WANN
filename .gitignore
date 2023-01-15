@@ -1,3 +1,5 @@
 .idea/
 res/*
 !res/.gitkeep
+log/**
+!log/viewRunStats.ipynb
