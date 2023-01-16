@@ -28,3 +28,10 @@ _Fitness may be interpreted as accuracy_
 [***]   Weight Values:    [-2.  -1.  -0.5  0.5  1.   2. ]
 ```
 ![Reversi_5_4](https://github.com/klima7/Reversi-WANN/blob/master/log/reversi_5_4.png)
+
+### Reversi 5x5
+```
+[***]   Fitness:         [0.58 0.56 0.55 0.4  0.43 0.43] 
+[***]   Weight Values:   [-2.  -1.  -0.5  0.5  1.   2. ]
+```
+![Reversi_5_5](https://github.com/klima7/Reversi-WANN/blob/master/log/reversi_5_5.png)
