@@ -3,4 +3,5 @@ res/*
 !res/.gitkeep
 log/**
 !log/viewRunStats.ipynb
+!log/**.png
 **/__pycache__/**
