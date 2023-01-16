@@ -93,7 +93,8 @@ class ReversiEnv:
         if not self.__simulation.is_finished():
             return 0
 
-        return 1 if self.__simulation.get_winner() == self.__color else 0
+        # Uncomment after training to interpret fitness as winning rate
+        # return 1 if self.__simulation.get_winner() == self.__color else 0
 
         player_count = self.__simulation.board.get_discs_count(self.__color)
         opponent_count = self.__simulation.board.get_discs_count(-self.__color)
