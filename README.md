@@ -15,7 +15,7 @@ python wann_train.py -p p/reversi_5_4.json -n 8
 
 ### Testing
 ```
-python wann_test.py -p p/reversi_5_4.json -r 1000
+python wann_test.py -p p/reversi_5_4.json -r 1000 -i champions/reversi_5_4.out -v True
 ```
 
 ## Results
